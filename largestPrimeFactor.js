@@ -1,9 +1,28 @@
 //Find the Largest Prime Factors of a number.
 
-let randomNumber = prompt("Enter your desired number: ", "1234")
+const randomNumber = parseInt(prompt("Enter any natural number: ", "1234"));
 
-const findPrimeFactors = (num) => {
+const checkPrime = (num) => {
+    let isPrime = true
     
+    if (num === 1 ) {
+        return console.log("1 is neither composite or prime")
+    }
+    else if ( num > 1 ) {
+    
+    for(let i = 2; i <= num/2; i++) {
+        if(num%i == 0  ) { 
+            isPrime = false
+        }
+    }
+    
+    if (isPrime) {
+        return true;
+    } else {
+        return false; 
+    }
+}
 }
 
-findPrimeFactors(randomNumber)
+
+console.log("Is prime? : ",checkPrime(randomNumber))
