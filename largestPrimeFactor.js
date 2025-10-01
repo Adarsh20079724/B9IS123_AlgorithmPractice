@@ -1,5 +1,3 @@
-//Find the Largest Prime Factors of a number.
-
 const randomNumber = parseInt(prompt("Enter any natural number: ", "1234"));
 
 const checkPrime = (num) => {
@@ -24,5 +22,16 @@ const checkPrime = (num) => {
 }
 }
 
+const largestPrimeFactor = (num) => {
+    let largestFactor = 0
+     for(let i = 2; i <= num; i++) {
+        if( num % i == 0 && checkPrime(i) ) { 
+            largestFactor = i;
+            num = num/i;
+        }
+    }
+    return largestFactor;
+}
 
-console.log("Is prime? : ",checkPrime(randomNumber))
+
+console.log("Largest Prime Factor " ,largestPrimeFactor(randomNumber))
