@@ -16,4 +16,20 @@ const checkPalindrome = (num) => {
     return isPalindrome
 }
 
+const largestNumber = (length) => {
+    let largestNum = 0
+    return largestNum = (10 ** length) - 1;
+}
+
+const largestProductPalindrome = (length) => {
+    let product = 0
+    for (let i = largestNumber(length); i >= 1 ; i--){
+        for( let j = largestNumber(length); j >= 1 ; j--) {
+            
+        }
+    }
+    
+    return product
+}
+
 console.log("palindrome or not : ", checkPalindrome(randomNumber));
