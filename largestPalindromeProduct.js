@@ -1,6 +1,5 @@
-const randomNumber = parseInt(prompt("Enter any Natural Number: ", "1234"));
-
-//const staticNumber = 12321
+//const numLength = parseInt(prompt("Enter length pf Digit = "))
+const digit = 3
 
 const checkPalindrome = (num) => {
     let isPalindrome = false
@@ -21,16 +20,27 @@ const largestNumber = (length) => {
     return largestNum = (10 ** length) - 1;
 }
 
+const smallestNumber = (length) => {
+    let smallestNum = 0
+    return smallestNum = (10 ** (length - 1))
+}
+
 const largestProductPalindrome = (length) => {
     let num1 = 0, num2 = 0, product = 0;
     
     for (let i = largestNumber(length); i >= 1 ; i--){
         for( let j = largestNumber(length); j >= 1 ; j--) {
-            
+          product = i * j
+          if ( checkPalindrome(product) ){
+              console.log("Palindrome value", product)
+              num1 = i
+              num2 = j
+              console.log("num1: " + num1 + "num2: " + num2)
+              break;
+          }
         }
     }
     
-    return product
 }
 
-console.log("palindrome or not : ", checkPalindrome(randomNumber));
+console.log("Largest products from palindrome ", largestProductPalindrome(digit))
