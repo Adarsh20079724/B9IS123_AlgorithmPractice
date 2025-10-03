@@ -25,21 +25,22 @@ const smallestNumber = (length) => {
 }
 
 const largestProductPalindrome = (length) => {
-    let num1 = 0, num2 = 0, product = 0;
+    let num1 = 0, num2 = 0, product = 0, res = 0;
     
-    for (let i = largestNumber(length); i >= 1 ; i--){
-        for( let j = largestNumber(length); j >= 1 ; j--) {
-          product = i * j
-          if ( checkPalindrome(product) ){
-              console.log("Palindrome value", product)
+    for (let i = largestNumber(length); i >= smallestNumber(length) ; i--){
+        for( let j = largestNumber(length); j >= smallestNumber(length) ; j--) {
+          res = i * j;
+        
+          if (checkPalindrome(res) && (product < res)){
               num1 = i
               num2 = j
-              console.log("num1: " + num1 + " num2: " + num2)
-              break;
+              product = res
           }
         }
     }
     
+    return console.log("Largest Palindrom is " + product + " = " + num1 + " x " + num2) 
+    
 }
 
-console.log("Largest products from palindrome ", largestProductPalindrome(digit))
+largestProductPalindrome(digit)
