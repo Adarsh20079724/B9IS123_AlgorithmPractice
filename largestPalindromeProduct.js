@@ -11,7 +11,6 @@ const checkPalindrome = (num) => {
     else{
         console.log("Please enter positive integer")
     }
-    
     return isPalindrome
 }
 
@@ -35,7 +34,7 @@ const largestProductPalindrome = (length) => {
               console.log("Palindrome value", product)
               num1 = i
               num2 = j
-              console.log("num1: " + num1 + "num2: " + num2)
+              console.log("num1: " + num1 + " num2: " + num2)
               break;
           }
         }
