@@ -28,7 +28,7 @@ const largestProductPalindrome = (length) => {
     let num1 = 0, num2 = 0, product = 0, res = 0;
     
     for (let i = largestNumber(length); i >= smallestNumber(length) ; i--){
-        for( let j = largestNumber(length); j >= smallestNumber(length) ; j--) {
+        for( let j = i; j >= smallestNumber(length) ; j--) {
           res = i * j;
         
           if (checkPalindrome(res) && (product < res)){
